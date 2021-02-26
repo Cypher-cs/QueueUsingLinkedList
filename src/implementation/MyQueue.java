@@ -20,12 +20,10 @@ public class MyQueue<E> implements QueueADT<E> {
         Node<E> node = new Node<>(data);
         if (!isEmpty()) {
             rear.setNext(node);
-            rear = node;
-        }
-        else {
+        } else {
             front = node;
-            rear = node;
         }
+        rear = node;
         size++;
     }
 
@@ -40,8 +38,7 @@ public class MyQueue<E> implements QueueADT<E> {
                 rear = null;
             }
             size--;
-        }
-        else {
+        } else {
             System.out.println("Queue UnderFlow...");
         }
         return response;
@@ -52,8 +49,7 @@ public class MyQueue<E> implements QueueADT<E> {
         E response = null;
         if (!isEmpty()) {
             response = front.getData();
-        }
-        else {
+        } else {
             System.out.println("Queue is Empty...");
         }
         return response;
